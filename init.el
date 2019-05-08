@@ -1,3 +1,7 @@
+;; set home directory as "~/"
+(setq default-directory "~/")
+(setq command-line-default-directory "~/")
+
 (when (memq window-system '(mac ns))
   (global-set-key [s-mouse-1] 'browse-url-at-mouse)
 
