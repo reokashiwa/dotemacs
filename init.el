@@ -73,6 +73,9 @@
       (when (string-match "chatham" system-name)
 	(add-to-list 'default-frame-alist '(font . "ricty-16"))
 	(setq initial-frame-alist '((height . 60)(left . 1000))) nil)
+      (when (string-match "comoro" system-name)
+	(add-to-list 'default-frame-alist '(font . "ricty-16"))
+	(setq initial-frame-alist '((height . 60)(left . 1000))) nil)
       ))
 
 (set-language-environment "Japanese")
