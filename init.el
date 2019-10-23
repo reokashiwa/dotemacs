@@ -22,6 +22,15 @@
 (setq load-path (cons "/opt/local/bin/" load-path))
 (add-to-list 'load-path "~/.emacs.d/elisp/")
 
+(defconst my-elisp-directory "~/.emacs.d/elisp" "The directory for my elisp file.")
+
+(dolist (dir (let ((dir (expand-file-name my-elisp-directory)))
+               (list dir (format "%s%d" dir emacs-major-version))))
+  (when (and (stringp dir) (file-directory-p dir))
+    (let ((default-directory dir))
+      (add-to-list 'load-path default-directory)
+      (normal-top-level-add-subdirs-to-load-path))))
+
 (when (memq window-system '(mac ns))
   (global-set-key [s-mouse-1] 'browse-url-at-mouse)
 
