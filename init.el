@@ -93,8 +93,8 @@
       (set-face-bold-p 'font-lock-warning-face nil)
 
       ;; ウィンドウ位置・大きさの指定
-      (add-to-list 'initial-frame-alist '(width . 100))
-      (add-to-list 'initial-frame-alist '(top . 0))
+      ;;(add-to-list 'initial-frame-alist '(width . 100))
+      ;;(add-to-list 'initial-frame-alist '(top . 0))
       (if (string-match "visayas" system-name)
 	  (setq initial-frame-alist '((height . 61)(left . 1120))))
       (when (string-match "agalega" system-name)
@@ -114,6 +114,13 @@
 	(add-to-list 'default-frame-alist '(font . "ricty-16"))
 	(add-to-list 'initial-frame-alist '(width . 100))
 	(setq initial-frame-alist '((height . 60)(left . 1000))) nil)
+
+      (when (string-match "sotavento" system-name)
+	(setq initial-frame-alist '((font   . "ricty-16")
+				    (width  . 100)
+				    (height . 100)
+				    (left   . 2160))) nil)
+      
       ))
 
 (set-language-environment "Japanese")
